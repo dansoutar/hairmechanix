@@ -7,6 +7,11 @@ const colors = {
   }
 }
 
-const theme = extendTheme({ colors })
+const fonts = {
+  heading: `'Roboto', sans-serif`,
+  body: `'Roboto', sans-serif`
+}
+
+const theme = extendTheme({ colors, fonts })
 
 export { theme }
