@@ -5,7 +5,6 @@ import { theme } from '../styles/theme'
 import { Button } from '@chakra-ui/react'
 
 const CtaButton = ({ text = 'View Services', ...rest }) => {
-  console.log(text)
   return (
     <Button
       fontWeight='bold'
