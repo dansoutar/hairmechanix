@@ -17,3 +17,7 @@ a {
 .title {
   font-size: 34px;
 }
+
+.hero-section .right > span {
+  height: 100% !important;
+}

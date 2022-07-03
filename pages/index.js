@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { theme } from '../styles/theme'
 
 import Hero from '../components/sections/Hero'
+import About from '../components/sections/About'
+
 export default function Home() {
   return (
     <div>
@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
 
       <Hero />
+      <About />
     </div>
   )
 }
