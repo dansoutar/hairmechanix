@@ -33,10 +33,11 @@ const InfoBar = () => {
           backgroundColor={theme.colors.brand.black}
           py='50px'
           display='grid'
-          gridTemplateColumns='1fr 1fr 1fr'
+          gridTemplateColumns={['1fr', '1fr', '1fr 1fr 1fr']}
+          spacing={['1rem', '1rem', 0]}
         >
           {infoColumns.map(({ title, line1, line2 }) => (
-            <VStack key={title} color='#FFF' textAlign='center' spacing={5}>
+            <VStack key={title} color='#FFF' textAlign='center' spacing={[2, 2, 5]}>
               <Text color={theme.colors.brand.gold} fontWeight='bold'>
                 {title}
               </Text>
