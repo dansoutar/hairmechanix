@@ -10,4 +10,4 @@ const HmContainer = ({ children, ...rest }) => {
   )
 }
 
-export default HmContainer
+export { HmContainer }

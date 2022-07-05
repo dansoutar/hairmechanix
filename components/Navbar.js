@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { Box, Flex, HStack, Link, IconButton, useDisclosure, useColorModeValue, Stack } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import HmContainer from '../components/HmContainer'
+import { HmContainer } from '../components/HmContainer'
 import logo from '../public/hm-logo-1.png'
 import Image from 'next/image'
 
