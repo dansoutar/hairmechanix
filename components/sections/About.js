@@ -18,7 +18,7 @@ const Hero = () => {
         <Image className='chairImg' src={aboutImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
       </Box>
       <Box w='50%' display='grid' alignItems='center' justifyContent='start'>
-        <HmHalfContainer>
+        <HmHalfContainer justifyContent='end'>
           <Box className='about-content' maxW='478px'>
             <Text className='title' mb='1rem' lineHeight='normal'>
               About Us

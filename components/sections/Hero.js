@@ -15,7 +15,7 @@ const Hero = () => {
     <Box as='section' className='hero-section' display='flex'>
       <Navbar />
       <Box className='left' w='50%' display='grid' alignItems='center' justifyContent='end'>
-        <HmHalfContainer>
+        <HmHalfContainer justifyContent='start'>
           <Box className='hero-content' maxW='478px'>
             <Text className='title' mb='1rem' lineHeight='normal'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
