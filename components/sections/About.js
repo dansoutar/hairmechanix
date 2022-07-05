@@ -11,7 +11,7 @@ import { CtaButton } from '../CtaButton'
 import HmHalfContainer from '../HmHalfContainer'
 import aboutImg from '../../public/about-img.png'
 
-const Hero = () => {
+const About = () => {
   return (
     <Box as='section' className='hero-section' display='flex'>
       <Box className='right' w='50%' h='100vh' maxH='1025px' position='relative'>
@@ -44,4 +44,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export { About }

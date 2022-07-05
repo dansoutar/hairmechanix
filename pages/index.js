@@ -1,7 +1,8 @@
 import Head from 'next/head'
 
-import Hero from '../components/sections/Hero'
-import About from '../components/sections/About'
+import { InfoBar } from '../components/InfoBar'
+import { Hero } from '../components/sections/Hero'
+import { About } from '../components/sections/About'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
 
       <Hero />
+      <InfoBar />
       <About />
     </div>
   )
