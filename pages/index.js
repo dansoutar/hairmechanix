@@ -4,6 +4,7 @@ import { InfoBar } from '../components/InfoBar'
 import { Hero } from '../components/sections/Hero'
 import { About } from '../components/sections/About'
 import { Services } from '../components/sections/Services'
+import { OurTeam } from '../components/sections/OurTeam'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <InfoBar />
       <About />
       <Services />
+      <OurTeam />
     </div>
   )
 }

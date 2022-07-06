@@ -4,7 +4,8 @@ const colors = {
   brand: {
     black: '#0C0C0C',
     gold: '#BB892C',
-    grey: '#8C8C8C'
+    grey: '#8C8C8C',
+    lightGrey: '#EEEEEE'
   }
 }
 
