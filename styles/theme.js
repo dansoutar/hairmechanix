@@ -5,6 +5,7 @@ const colors = {
     black: '#0C0C0C',
     gold: '#BB892C',
     grey: '#8C8C8C',
+    midGrey: '#C4C4C4',
     lightGrey: '#EEEEEE'
   }
 }
