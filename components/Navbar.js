@@ -1,5 +1,19 @@
 import NextLink from 'next/link'
-import { Box, Flex, HStack, Link, IconButton, useDisclosure, useColorModeValue, Stack } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  HStack,
+  Link,
+  IconButton,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  useDisclosure,
+  Stack
+} from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { HmContainer } from '../components/HmContainer'
 import logo from '../public/hm-logo-1.png'
@@ -32,19 +46,58 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <HmContainer sx={containerSx}>
-      <Box display='flex' justifyContent='center'>
-        <Box h='140px' w='100%' display='flex' alignItems='center'>
-          <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-            <IconButton
-              size={'md'}
-              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-              aria-label={'Open Menu'}
-              display={{ md: 'none' }}
-              onClick={isOpen ? onClose : onOpen}
-            />
-            <HStack spacing={8} alignItems={'center'}>
-              <Box>
+    // <HmContainer sx={containerSx}>
+    //   <Box display='flex' justifyContent='center'>
+    //     <Box h='140px' w='100%' display='flex' alignItems='center'>
+    //       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+    //         <IconButton
+    //           size={'md'}
+    //           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+    //           aria-label={'Open Menu'}
+    //           display={{ md: 'none' }}
+    //           onClick={isOpen ? onClose : onOpen}
+    //         />
+
+    //         {/* Tablet / Desktop */}
+    //         <HStack spacing={8} alignItems={'center'}>
+    //           <Box>
+    //             <Image src={logo} alt='hair mechanix logo' />
+    //           </Box>
+    //           <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+    //             {Links.map((link) => (
+    //               <NavLink key={link}>{link}</NavLink>
+    //             ))}
+    //           </HStack>
+    //         </HStack>
+    //       </Flex>
+
+    //       {/* Mobile */}
+    //       {isOpen ? (
+    //         <Box pb={4} display={{ md: 'none' }}>
+    //           <Stack as={'nav'} spacing={4}>
+    //             {Links.map((link) => (
+    //               <NavLink key={link}>{link}</NavLink>
+    //             ))}
+    //           </Stack>
+    //         </Box>
+    //       ) : null}
+    //     </Box>
+    //   </Box>
+    // </HmContainer>
+
+    <>
+      <Box px={4} backgroundColor='white' position='absolute' top='0' w='100%' zIndex='1000' py='1rem'>
+        <Flex alignItems={'center'} justifyContent={'space-between'}>
+          <IconButton
+            size={'md'}
+            icon={isOpen ? <CloseIcon backgroundColor='none' /> : <HamburgerIcon backgroundColor='none' />}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
+            onClick={isOpen ? onClose : onOpen}
+          />
+          <HmContainer>
+            <HStack display='flex' justifyContent={['end', 'end', 'start']} spacing={8} alignItems={'center'}>
+              <Box maxW={['60px', '80px']}>
                 <Image src={logo} alt='hair mechanix logo' />
               </Box>
               <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
@@ -53,19 +106,29 @@ export default function Navbar() {
                 ))}
               </HStack>
             </HStack>
+          </HmContainer>
+          <Flex alignItems={'center'}>
+            <Menu>
+              <MenuList>
+                <MenuItem>Link 1</MenuItem>
+                <MenuItem>Link 2</MenuItem>
+                <MenuDivider />
+                <MenuItem>Link 3</MenuItem>
+              </MenuList>
+            </Menu>
           </Flex>
+        </Flex>
 
-          {isOpen ? (
-            <Box pb={4} display={{ md: 'none' }}>
-              <Stack as={'nav'} spacing={4}>
-                {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
-                ))}
-              </Stack>
-            </Box>
-          ) : null}
-        </Box>
+        {isOpen ? (
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
       </Box>
-    </HmContainer>
+    </>
   )
 }

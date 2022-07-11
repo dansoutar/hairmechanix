@@ -10,12 +10,6 @@ import { HmContainer } from '../HmContainer'
 import { theme } from '../../styles/theme'
 import { IG_URL } from '../../data/igUrl'
 
-// const IgBox = () => (
-//   <Box w='288px' h='288px' p='20px' display='grid' placeItems='center' backgroundColor={theme.colors.brand.midGrey}>
-//     <ExternalLinkIcon w={12} h={12} color='white' />
-//   </Box>
-// )
-
 const fetchIg = async () => {
   try {
     return await fetch(IG_URL).then((resp) => resp.json())
@@ -35,7 +29,9 @@ const OurWork = () => {
     getIgData()
   }, [])
 
-  console.log(igData)
+  if (!igData) {
+    return null
+  }
 
   const igImages = igData?.slice(0, 6).map((media, idx) => {
     return <Image src={media.media_url} alt='instagram post media' key={media.media_url} width='388px' height='388px' />
