@@ -46,47 +46,16 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    // <HmContainer sx={containerSx}>
-    //   <Box display='flex' justifyContent='center'>
-    //     <Box h='140px' w='100%' display='flex' alignItems='center'>
-    //       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-    //         <IconButton
-    //           size={'md'}
-    //           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-    //           aria-label={'Open Menu'}
-    //           display={{ md: 'none' }}
-    //           onClick={isOpen ? onClose : onOpen}
-    //         />
-
-    //         {/* Tablet / Desktop */}
-    //         <HStack spacing={8} alignItems={'center'}>
-    //           <Box>
-    //             <Image src={logo} alt='hair mechanix logo' />
-    //           </Box>
-    //           <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-    //             {Links.map((link) => (
-    //               <NavLink key={link}>{link}</NavLink>
-    //             ))}
-    //           </HStack>
-    //         </HStack>
-    //       </Flex>
-
-    //       {/* Mobile */}
-    //       {isOpen ? (
-    //         <Box pb={4} display={{ md: 'none' }}>
-    //           <Stack as={'nav'} spacing={4}>
-    //             {Links.map((link) => (
-    //               <NavLink key={link}>{link}</NavLink>
-    //             ))}
-    //           </Stack>
-    //         </Box>
-    //       ) : null}
-    //     </Box>
-    //   </Box>
-    // </HmContainer>
-
     <>
-      <Box px={4} backgroundColor='white' position='absolute' top='0' w='100%' zIndex='1000' py='1rem'>
+      <Box
+        px={4}
+        backgroundColor={['white', 'white', 'unset']}
+        position='absolute'
+        top='0'
+        w='100%'
+        zIndex='1000'
+        py='1rem'
+      >
         <Flex alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

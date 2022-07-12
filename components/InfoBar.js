@@ -26,15 +26,15 @@ const infoColumns = [
 
 const InfoBar = () => {
   return (
-    <Box position='relative' h='1px' zIndex='100'>
-      <HmContainer transform='translateY(-50%)'>
+    <Box position='relative' h={['unset', 'unset', '1px']} zIndex='100'>
+      <HmContainer transform={['unset', 'unset', 'translateY(-50%)']}>
         <Stack
           direction={['column', 'row']}
           backgroundColor={theme.colors.brand.black}
-          py='50px'
+          py='40px'
           display='grid'
+          gap='1.5rem'
           gridTemplateColumns={['1fr', '1fr', '1fr 1fr 1fr']}
-          spacing={['1rem', '1rem', 0]}
         >
           {infoColumns.map(({ title, line1, line2 }) => (
             <VStack key={title} color='#FFF' textAlign='center' spacing={[2, 2, 5]}>
