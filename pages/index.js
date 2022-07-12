@@ -20,10 +20,10 @@ export default function Home() {
       <Hero />
       <InfoBar />
       <About />
-      {/* <Services /> */}
-      {/* <OurTeam /> */}
-      {/* <OurWork /> */}
-      {/* <LogoStrip /> */}
+      <Services />
+      <OurTeam />
+      <OurWork />
+      <LogoStrip />
     </div>
   )
 }
