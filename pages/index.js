@@ -7,6 +7,7 @@ import { Services } from '../components/sections/Services'
 import { OurTeam } from '../components/sections/OurTeam'
 import { OurWork } from '../components/sections/OurWork'
 import { LogoStrip } from '../components/sections/LogoStrip'
+import { Footer } from '../components/sections/Footer'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <OurTeam />
       <OurWork />
       <LogoStrip />
+      <Footer />
     </div>
   )
 }
