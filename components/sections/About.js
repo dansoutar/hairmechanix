@@ -4,7 +4,7 @@ import { theme } from '../../styles/theme'
 
 import Image from 'next/image'
 
-import { Box } from '@chakra-ui/react'
+import { AbsoluteCenter, Box } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 
 import { CtaButton } from '../CtaButton'
@@ -14,11 +14,11 @@ import aboutImg from '../../public/about-img.png'
 const About = () => {
   return (
     <Box as='section' className='hero-section' display='flex'>
-      <Box className='right' w='50%' h='100vh' maxH='1025px' position='relative'>
+      <Box className='right' display={['none', 'none', 'block']} w='50%' h='100vh' maxH='1025px' position='relative'>
         <Image className='chairImg' src={aboutImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
       </Box>
-      <Box w='50%' display='grid' alignItems='center' justifyContent='start'>
-        <HmHalfContainer justifyContent='end'>
+      <Box className='left' w={['100%', '100%', '50%']} pt={['4rem', '4rem', '0']} position='relative'>
+        <HmHalfContainer className='about-container' justifyContent='end' width='100%' maxW='520px' pl='1rem'>
           <Box className='about-content' maxW='478px'>
             <Text className='title' mb='1rem' lineHeight='normal'>
               About Us

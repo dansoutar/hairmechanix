@@ -4,10 +4,8 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Box } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import { HmContainer } from '../HmContainer'
-import { theme } from '../../styles/theme'
 import { IG_URL } from '../../data/igUrl'
 
 const fetchIg = async () => {
@@ -33,7 +31,7 @@ const OurWork = () => {
     return null
   }
 
-  const igImages = igData?.slice(0, 6).map((media, idx) => {
+  const igImages = igData?.slice(0, 6).map((media) => {
     return <Image src={media.media_url} alt='instagram post media' key={media.media_url} width='388px' height='388px' />
   })
 
@@ -47,7 +45,12 @@ const OurWork = () => {
             </Text>
           </Box>
         </HmContainer>
-        <Box display='flex' justifyContent='center' overflowX='hidden' gap='1px'>
+        <Box
+          display='grid'
+          gridTemplateColumns='repeat(auto-fit, minmax(min(288px, 100%), 1fr))'
+          overflowX='hidden'
+          gap='1px'
+        >
           {igImages}
         </Box>
       </Box>

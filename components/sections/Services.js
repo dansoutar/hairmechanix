@@ -40,12 +40,12 @@ const services = [
 
 const Services = () => {
   return (
-    <Box p={16}>
+    <Box as='section' className='services-section' p={['4', '12']}>
       <HmContainer>
         <Text className='title' mb={8}>
           Services
         </Text>
-        <Box display='grid' gridTemplateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']} gridGap='1rem'>
+        <Box display='grid' gridTemplateColumns={['1fr', '1fr', '1fr  1fr', '1fr  1fr 1fr']} gridGap='1rem'>
           {services.map(({ title, description }) => (
             <ServiceCard {...{ title, description }} key={title} />
           ))}

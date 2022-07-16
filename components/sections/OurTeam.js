@@ -75,6 +75,21 @@ const buttonStyles = {
 const OurTeam = () => {
   const swiperRef = useRef()
 
+  const breakpoints = {
+    0: {
+      slidesPerView: 1
+    },
+    640: {
+      slidesPerView: 1.5
+    },
+    768: {
+      slidesPerView: 2.5
+    },
+    1140: {
+      slidesPerView: 3.25
+    }
+  }
+
   const SlidePrevIcon = <Image src={slideLeftIcon} w='24px' h='24px' alt='slide prev icon' />
   const SlidePrevButton = () => (
     <Button style={buttonStyles} onClick={() => swiperRef.current.slidePrev()}>
@@ -92,8 +107,8 @@ const OurTeam = () => {
   const attachSwiperRef = (swiper) => (swiperRef.current = swiper)
 
   return (
-    <Box as='section' className='our-team-section' backgroundColor={theme.colors.brand.lightGrey}>
-      <Box p={16}>
+    <Box as='section' className='our-team-section' slidesperview={3.5} backgroundColor={theme.colors.brand.lightGrey}>
+      <Box p={['4', '12']}>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>
             <Text className='title' mb={8}>
@@ -105,7 +120,7 @@ const OurTeam = () => {
             </ButtonGroup>
           </Box>
           <Box display='flex' gap='1rem'>
-            <Swiper spaceBetween={25} slidesPerView={3.5} onSwiper={attachSwiperRef}>
+            <Swiper breakpoints={breakpoints} spaceBetween={25} slidesPerView={3.5} onSwiper={attachSwiperRef}>
               {teamMembers.map(({ name, ...rest }) => (
                 <SwiperSlide key={name}>
                   <TeamMemberCard key={name} {...{ name }} {...rest} />

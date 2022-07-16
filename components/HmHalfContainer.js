@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react'
 
 const HmHalfContainer = ({ children, ...rest }) => {
   return (
-    <Container className='half-container' display='flex' w='100vw' maxW='520px' p={0} {...rest}>
+    <Container className='half-container' display='flex' w='100%' p={0} {...rest}>
       {children}
     </Container>
   )

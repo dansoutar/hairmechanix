@@ -13,7 +13,7 @@ import heroImg from '../../public/hero-img.png'
 const Hero = () => {
   return (
     <Box as='section' className='hero-section' display='flex' flexDirection={['column', 'column', 'row']}>
-      <Navbar />
+      <Navbar className='nav' />
       <Box
         className='left'
         flexBasis={['auto', 'auto', '50%']}

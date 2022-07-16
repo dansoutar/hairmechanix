@@ -26,6 +26,7 @@ const NavLink = ({ children }) => (
     <Link
       px={2}
       py={1}
+      backgroundColor='none'
       _hover={{
         textDecoration: 'none'
       }}
@@ -34,13 +35,6 @@ const NavLink = ({ children }) => (
     </Link>
   </NextLink>
 )
-
-const containerSx = {
-  position: 'absolute',
-  top: 0,
-  left: '50%',
-  transform: 'translateX(-50%)'
-}
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -55,11 +49,13 @@ export default function Navbar() {
         w='100%'
         zIndex='1000'
         py='1rem'
+        boxShadow={isOpen ? 'md' : 'unset'}
       >
         <Flex alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
+            className='mobile-toggle'
             size={'md'}
-            icon={isOpen ? <CloseIcon backgroundColor='none' /> : <HamburgerIcon backgroundColor='none' />}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}

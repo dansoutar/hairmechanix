@@ -26,7 +26,7 @@ const infoColumns = [
 
 const InfoBar = () => {
   return (
-    <Box position='relative' h={['unset', 'unset', '1px']} zIndex='100'>
+    <Box position='relative' h={['auto', 'auto', '1px']} zIndex='100'>
       <HmContainer transform={['unset', 'unset', 'translateY(-50%)']}>
         <Stack
           direction={['column', 'row']}
