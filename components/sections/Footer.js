@@ -16,7 +16,7 @@ const footerAddressInfo = (
       <Text>7826 Wyandotte St. E</Text>
       <Text>Windsor, ON</Text>
       <Text>(519) 974-5453</Text>
-      <Text>contact@hairmechanix.ca</Text>
+      <Text>info.hairmechanix@gmail.com</Text>
     </Box>
   </>
 )

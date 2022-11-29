@@ -12,7 +12,8 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
-  Stack
+  Stack,
+  theme
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { HmContainer } from '../components/HmContainer'
@@ -24,6 +25,7 @@ const Links = ['About', 'Services', 'Team', 'Work']
 const NavLink = ({ children }) => (
   <NextLink href={'#'} passHref>
     <Link
+      color={theme.colors.white}
       px={2}
       py={1}
       backgroundColor='none'

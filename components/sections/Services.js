@@ -14,27 +14,32 @@ consequat.
 const services = [
   {
     title: 'Hair',
-    description: serviceDescription
+    description:
+      'Any hair cut to your taste using high quality products to suit your hair type. Finished with a blow-dry and style. See our Barber for classic cuts and beard styling for a specialized service. '
   },
   {
     title: 'Color',
-    description: serviceDescription
+    description:
+      'Using the award winning color line from Schwarzkopf professional, we offer unique color services to suit your individual needs. '
+  },
+  {
+    title: 'Specialty Services',
+    description:
+      'Offering a wide range of specialty services to suit your specific needs. From smoothing treatments, perms, and extensions, we can make all your hair dreams come true. '
   },
   {
     title: 'Styling',
-    description: serviceDescription
+    description: 'With creativity feeling our fire, we can deliver various styles for everyday, or a special event. '
   },
   {
-    title: 'Beard & Moustache',
-    description: serviceDescription
+    title: 'Bridal Services',
+    description:
+      'Book your special day with us for a full service experience, including hair and makeup, either in house or mobile. '
   },
   {
     title: 'Waxing',
-    description: serviceDescription
-  },
-  {
-    title: 'Children',
-    description: serviceDescription
+    description:
+      'Let our brow stylist reshape and clean up your brows to suit your face shape. Also servicing all facial waxing. '
   }
 ]
 

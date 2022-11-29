@@ -2,19 +2,21 @@ import React from 'react'
 
 import Image from 'next/image'
 
-import { Box } from '@chakra-ui/react'
-import { Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 
 import { CtaButton } from '../CtaButton'
 import Navbar from '../Navbar'
 import HmHalfContainer from '../HmHalfContainer'
 import heroImg from '../../public/hero-img.png'
 
+import { theme } from '../../styles/theme'
+
 const Hero = () => {
   return (
     <Box as='section' className='hero-section' display='flex' flexDirection={['column', 'column', 'row']}>
       <Navbar className='nav' />
       <Box
+        backgroundColor={theme.colors.brand.black}
         className='left'
         flexBasis={['auto', 'auto', '50%']}
         h={['80vh', '80vh', 'unset']}
@@ -25,13 +27,12 @@ const Hero = () => {
         justifyContent={['center', 'center', 'end']}
       >
         <HmHalfContainer justifyContent={['center', 'center', 'start']}>
-          <Box className='hero-content' w='88%' maxW='478px'>
+          <Box className='hero-content' color={theme.colors.white} w='88%' maxW='478px'>
             <Text className='title' mb='1rem' lineHeight='normal'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              Welcome to The Hair Mechanix
             </Text>
             <Text mb='2rem'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
+              We are an inclusive salon, offering a blend of services to anyone looking for a unique experience.
             </Text>
             <CtaButton />
           </Box>

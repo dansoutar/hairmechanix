@@ -6,7 +6,8 @@ const colors = {
     gold: '#BB892C',
     grey: '#8C8C8C',
     midGrey: '#C4C4C4',
-    lightGrey: '#EEEEEE'
+    lightGrey: '#EEEEEE',
+    white: '#FFF'
   }
 }
 
