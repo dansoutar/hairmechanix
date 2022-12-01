@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
@@ -8,7 +12,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 * {
@@ -45,4 +49,16 @@ a {
     left: 0;
     transform: 'unset';
   }
+}
+
+.shopImg {
+  transform: translateY(-3px);
+}
+
+.info-bar {
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+}
+
+.team-member-card-stack > span {
+  height: 100% !important;
 }

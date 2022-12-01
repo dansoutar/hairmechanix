@@ -13,7 +13,7 @@ import { theme } from '../../styles/theme'
 
 const Hero = () => {
   return (
-    <Box as='section' className='hero-section' display='flex' flexDirection={['column', 'column', 'row']}>
+    <Box as='section' className='hero-section' id='hero' display='flex' flexDirection={['column', 'column', 'row']}>
       <Navbar className='nav' />
       <Box
         backgroundColor={theme.colors.brand.black}
@@ -27,7 +27,7 @@ const Hero = () => {
         justifyContent={['center', 'center', 'end']}
       >
         <HmHalfContainer justifyContent={['center', 'center', 'start']}>
-          <Box className='hero-content' color={theme.colors.white} w='88%' maxW='478px'>
+          <Box className='hero-content' color={theme.colors.white} w='88%'>
             <Text className='title' mb='1rem' lineHeight='normal'>
               Welcome to The Hair Mechanix
             </Text>

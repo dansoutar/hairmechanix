@@ -11,11 +11,32 @@ import HmHalfContainer from '../HmHalfContainer'
 import aboutImg from '../../public/about-img.png'
 
 const About = () => (
-  <Box as='section' className='hero-section' display='flex'>
-    <Box className='right' display={['none', 'none', 'block']} w='50%' h='100vh' maxH='1025px' position='relative'>
-      <Image className='chairImg' src={aboutImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
+  <Box
+    as='section'
+    className='hero-section'
+    id='about-section'
+    display='flex'
+    flexDirection={['column', 'column', 'row']}
+  >
+    <Box
+      className='right'
+      flexBasis='50%'
+      display={['none', 'none', 'block']}
+      h='100vh'
+      maxH='1025px'
+      position='relative'
+    >
+      <Image className='shopImg' src={aboutImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
     </Box>
-    <Box className='left' w={['100%', '100%', '50%']} pt={['4rem', '4rem', '0']} position='relative'>
+
+    <Box
+      className='left'
+      h='100vh'
+      maxH='1025px'
+      flexBasis={['100%', '100%', '50%']}
+      pt={['4rem', '4rem', '0']}
+      position='relative'
+    >
       <HmHalfContainer className='about-container' justifyContent='end' width='100%' maxW='520px' pl='1rem'>
         <Box className='about-content' maxW='478px'>
           <Text className='title' mb='1rem' lineHeight='normal'>

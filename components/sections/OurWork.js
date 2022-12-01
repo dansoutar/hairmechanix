@@ -36,7 +36,7 @@ const OurWork = () => {
   })
 
   return (
-    <Box as='section' className='our-team-section'>
+    <Box as='section' id='work-section'>
       <Box pt={16}>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>
@@ -52,6 +52,7 @@ const OurWork = () => {
           gap='1px'
         >
           {igImages}
+          hello
         </Box>
       </Box>
     </Box>

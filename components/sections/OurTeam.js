@@ -107,7 +107,7 @@ const OurTeam = () => {
   const attachSwiperRef = (swiper) => (swiperRef.current = swiper)
 
   return (
-    <Box as='section' className='our-team-section' slidesperview={3.5} backgroundColor={theme.colors.brand.black}>
+    <Box as='section' id='team-section' slidesperview={3.5} backgroundColor={theme.colors.brand.black}>
       <Box p={['6', '20']}>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>

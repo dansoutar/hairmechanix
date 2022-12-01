@@ -5,9 +5,7 @@ import {
   HStack,
   Link,
   IconButton,
-  Button,
   Menu,
-  MenuButton,
   MenuList,
   MenuItem,
   MenuDivider,
@@ -20,10 +18,15 @@ import { HmContainer } from '../components/HmContainer'
 import logo from '../public/hm-logo-1.png'
 import Image from 'next/image'
 
-const Links = ['About', 'Services', 'Team', 'Work']
+const navLinks = [
+  { linkText: 'About', path: '#about-section' },
+  { linkText: 'Services', path: '#services-section' },
+  { linkText: 'Team', path: '#team-section' },
+  { linkText: 'Work', path: '#work-section' }
+]
 
-const NavLink = ({ children }) => (
-  <NextLink href={'#'} passHref>
+const NavLink = ({ children, linkPath }) => (
+  <NextLink href={linkPath} passHref>
     <Link
       color={theme.colors.white}
       px={2}
@@ -64,12 +67,16 @@ export default function Navbar() {
           />
           <HmContainer>
             <HStack display='flex' justifyContent={['end', 'end', 'start']} spacing={8} alignItems={'center'}>
-              <Box maxW={['60px', '80px']}>
-                <Image src={logo} alt='hair mechanix logo' />
-              </Box>
+              <NextLink href={'/'} passHref>
+                <Link>
+                  <Image src={logo} alt='hair mechanix logo' />
+                </Link>
+              </NextLink>
               <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-                {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
+                {navLinks.map(({ linkText, path }) => (
+                  <NavLink key={linkText} linkPath={path}>
+                    {linkText}
+                  </NavLink>
                 ))}
               </HStack>
             </HStack>

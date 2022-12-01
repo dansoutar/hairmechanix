@@ -27,9 +27,10 @@ const infoColumns = [
 
 const InfoBar = () => {
   return (
-    <Box position='relative' h={['auto', 'auto', '1px']} zIndex='100'>
+    <Box position='relative' h={['auto', 'auto', '0']} zIndex='100'>
       <HmContainer transform={['unset', 'unset', 'translateY(-50%)']}>
         <Stack
+          className='info-bar'
           direction={['column', 'row']}
           backgroundColor={theme.colors.brand.gold}
           py='40px'

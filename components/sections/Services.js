@@ -4,12 +4,7 @@ import { Box, Text } from '@chakra-ui/react'
 import { ServiceCard } from '../ServiceCard'
 import { HmContainer } from '../HmContainer'
 
-const serviceDescription = `Lorem ipsum dolor sit amet, consectetur 
-adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-consequat.
-`
+import { theme } from '../../styles/theme'
 
 const services = [
   {
@@ -45,7 +40,7 @@ const services = [
 
 const Services = () => {
   return (
-    <Box as='section' className='services-section' p={['4', '12']}>
+    <Box as='section' backgroundColor={theme.colors.brand.lightGrey} id='services-section' p={['4', '20']}>
       <HmContainer>
         <Text className='title' mb={8}>
           Services

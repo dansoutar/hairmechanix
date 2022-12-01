@@ -15,7 +15,6 @@ export default function Home() {
       <Head>
         <title>Hair Mechanix</title>
       </Head>
-
       <Hero />
       <InfoBar />
       <About />
