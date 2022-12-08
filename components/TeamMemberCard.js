@@ -11,7 +11,7 @@ const TeamMemberCard = ({ name, jobTitle, igLink, image }) => {
   return (
     <>
       <VStack
-        className='team-member-card-stack'
+        className='image-parent'
         spacing={2}
         alignItems='start'
         p={5}

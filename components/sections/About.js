@@ -13,17 +13,17 @@ import aboutImg from '../../public/about-img.png'
 const About = () => (
   <Box
     as='section'
-    className='hero-section'
+    className='about-section'
     id='about-section'
     display='flex'
     flexDirection={['column', 'column', 'row']}
   >
     <Box
       className='right'
-      flexBasis='50%'
+      flexBasis={['unset', 'unset', '50%']}
       display={['none', 'none', 'block']}
       h='100vh'
-      maxH='1025px'
+      maxH={['unset', 'unset', '1025px']}
       position='relative'
     >
       <Image className='shopImg' src={aboutImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
@@ -31,13 +31,17 @@ const About = () => (
 
     <Box
       className='left'
-      h='100vh'
-      maxH='1025px'
-      flexBasis={['100%', '100%', '50%']}
-      pt={['4rem', '4rem', '0']}
+      minH={['100vh', '100vh', 'unset']}
+      h={['unset', 'unset', '100vh']}
+      maxH={['unset', 'unset', '1025px']}
+      flexBasis={['unset', 'unset', '50%']}
+      pt={['330px', '330px', '0']}
       position='relative'
     >
-      <HmHalfContainer className='about-container' justifyContent='end' width='100%' maxW='520px' pl='1rem'>
+      <Box p='1rem' display={['block', 'block', 'none']}>
+        <Image className='shopImg-2' src={aboutImg} alt='barber chair' objectFit='cover' layout='responsive' />
+      </Box>
+      <HmHalfContainer className='about-container' justifyContent='end' width='100%' maxW='520px' p='1rem'>
         <Box className='about-content' maxW='478px'>
           <Text className='title' mb='1rem' lineHeight='normal'>
             About Us

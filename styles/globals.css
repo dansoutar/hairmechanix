@@ -27,13 +27,14 @@ a {
   font-size: 24px;
 }
 
-.hero-section .right > span {
+.hero-section .right > span,
+.about-section .right > span {
   height: 100% !important;
 }
 
 .mobile-toggle {
-  background: white !important;
-  background-color: white !important;
+  background: none !important;
+  background-color: none !important;
 }
 
 .about-container {
@@ -47,18 +48,18 @@ a {
     position: relative;
     top: 50%;
     left: 0;
-    transform: 'unset';
+    transform: none;
   }
 }
 
 .shopImg {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.01);
 }
 
 .info-bar {
   box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
 }
 
-.team-member-card-stack > span {
+.image-parent > span {
   height: 100% !important;
 }

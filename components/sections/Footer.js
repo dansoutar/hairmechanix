@@ -40,7 +40,7 @@ const Footer = () => {
       color='#fff'
     >
       <HmContainer>
-        <Flex gap='0.6rem' justifyContent='center'>
+        <Flex gap={['2rem', '4rem', '0.6rem']} justifyContent='center' flexDirection={['column', 'column', 'row']}>
           <Box
             className='left'
             flexBasis='55%'
@@ -52,14 +52,14 @@ const Footer = () => {
             <Box className='footer-image' minW='180px' maxW='246px' maxH='246px' display='grid' placeItems='center'>
               <Image src={footerImg} alt='footer image' />
             </Box>
-            <Box className='footer-info' p='1rem' display='grid' placeItems='center'>
+            <Box className='footer-info' display='grid' placeItems='center'>
               <Box>{footerAddressInfo}</Box>
             </Box>
           </Box>
           <Box
-            display={['none', 'none', 'none', 'flex']}
+            display={['flex']}
             alignItems='center'
-            justifyContent='end'
+            justifyContent={['start', 'start', 'end']}
             className='right'
             flexBasis='45%'
           >
