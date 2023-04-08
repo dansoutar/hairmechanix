@@ -108,7 +108,7 @@ const OurTeam = () => {
 
   return (
     <Box as='section' id='team-section' slidesperview={3.5} backgroundColor={theme.colors.brand.black}>
-      <Box p={['6', '20']}>
+      <Box p={['4', '20']}>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>
             <Text color={theme.colors.brand.white} className='title' mb={8}>

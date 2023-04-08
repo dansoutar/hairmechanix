@@ -1,111 +1,135 @@
-import NextLink from 'next/link'
-import {
-  Box,
-  Flex,
-  HStack,
-  Link,
-  IconButton,
-  Menu,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  Stack
-} from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import { HmContainer } from '../components/HmContainer'
-import logo from '../public/hm-logo-1.png'
+import React from 'react'
+import { Link, Box, Flex, Text, Stack } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import { theme } from '../styles/theme'
+import { HmContainer } from './HmContainer'
+import logo from '../public/hm-logo-1.png'
 
-const navLinks = [
-  { linkText: 'About', path: '#about-section' },
-  { linkText: 'Services', path: '#services-section' },
-  { linkText: 'Team', path: '#team-section' },
-  { linkText: 'Work', path: '#work-section' }
-]
+const Logo = (props) => {
+  return (
+    <Box {...props} maxWidth={{ base: '50px', md: '100px' }}>
+      <Text fontSize='lg' fontWeight='bold'>
+        <Link>
+          <Image src={logo} alt='hair mechanix logo' />
+        </Link>
+      </Text>
+    </Box>
+  )
+}
 
-const NavLink = ({ children, linkPath, ...rest }) => (
-  <NextLink href={linkPath} passHref>
-    <Link
-      color={[theme.colors.brand.black, theme.colors.brand.black, theme.colors.brand.white]}
-      px={2}
-      py={1}
-      backgroundColor='none'
-      _hover={{
-        textDecoration: 'none'
-      }}
-      {...rest}
-    >
-      {children}
-    </Link>
-  </NextLink>
-)
+export const NavBar = (props) => {
+  const [isOpen, setIsOpen] = React.useState(false)
 
-export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
-  console.log(isOpen)
+  const toggle = () => setIsOpen(!isOpen)
 
   return (
-    <>
-      <Box px={4} position='absolute' top='0' w='100%' zIndex='1000' py='1rem' boxShadow={isOpen ? 'md' : 'unset'}>
-        <Flex alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
-            className='mobile-toggle'
-            size={'md'}
-            icon={
-              isOpen ? (
-                <CloseIcon />
-              ) : (
-                <HamburgerIcon backgroundColor={'none'} boxSize={6} color={theme.colors.brand.white} />
-              )
-            }
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HmContainer>
-            <HStack display='flex' justifyContent='start' spacing={8} alignItems={'center'}>
-              <NextLink href={'/'} passHref>
-                <Link maxWidth='100px'>
-                  <Image src={logo} alt='hair mechanix logo' />
-                </Link>
-              </NextLink>
-              <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-                {navLinks.map(({ linkText, path }) => (
-                  <NavLink key={linkText} linkPath={path}>
-                    {linkText}
-                  </NavLink>
-                ))}
-              </HStack>
-            </HStack>
-          </HmContainer>
-          <Flex alignItems={'center'}>
-            <Menu>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
+    <NavBarContainer
+      {...props}
+      backgroundColor={theme.colors.brand.black}
+      py='1rem'
+      px={{ base: '1rem' }}
+      position='absolute'
+      top='0'
+      w='100%'
+      zIndex='1000'
+      boxShadow={isOpen ? 'lg' : 'unset'}
+    >
+      <Flex align='center' flexDirection={{ base: 'column', md: 'row' }} gap={{ base: '1rem', md: '4rem' }}>
+        <Flex align='center' gap='1rem'>
+          <MenuToggle toggle={toggle} isOpen={isOpen} />
+          <Logo w='100px' color={['white', 'white', 'primary.500', 'primary.500']} />
         </Flex>
+        <MenuLinks toggle={toggle} isOpen={isOpen} />
+      </Flex>
+    </NavBarContainer>
+  )
+}
 
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {navLinks.map(({ linkText, path }) => (
-                <NavLink key={linkText} linkPath={path} onClick={isOpen ? onClose : onOpen}>
-                  {linkText}
-                </NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-    </>
+const CloseIcon = () => (
+  <svg width='24' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'>
+    <title>Close</title>
+    <path
+      fill='white'
+      d='M9.00023 7.58599L13.9502 2.63599L15.3642 4.04999L10.4142 8.99999L15.3642 13.95L13.9502 15.364L9.00023 10.414L4.05023 15.364L2.63623 13.95L7.58623 8.99999L2.63623 4.04999L4.05023 2.63599L9.00023 7.58599Z'
+    />
+  </svg>
+)
+
+const MenuIcon = () => (
+  <svg width='24px' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' fill='white'>
+    <title>Menu</title>
+    <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
+  </svg>
+)
+
+const MenuToggle = ({ toggle, isOpen }) => {
+  return (
+    <Box display={{ base: 'block', md: 'none' }} onClick={toggle}>
+      {isOpen ? <CloseIcon /> : <MenuIcon />}
+    </Box>
+  )
+}
+
+const MenuItem = ({ children, isLast, toggle, to = '/', ...rest }) => {
+  return (
+    <Link onClick={toggle} href={to}>
+      <Text display='block' {...rest}>
+        {children}
+      </Text>
+    </Link>
+  )
+}
+
+const MenuLinks = ({ isOpen, toggle }) => {
+  return (
+    <Box display={{ base: isOpen ? 'block' : 'none', md: 'block' }} flexBasis={{ base: '100%', md: 'auto' }}>
+      <Stack
+        spacing={8}
+        align={{ base: 'flex-start' }}
+        justify={{ base: 'flex-start' }}
+        direction={['column', 'column', 'row']}
+        pt={[4, 4, 0, 0]}
+      >
+        <MenuItem toggle={toggle} to='#about-section'>
+          About
+        </MenuItem>
+        <MenuItem toggle={toggle} to='#services-section'>
+          Services
+        </MenuItem>
+        <MenuItem toggle={toggle} to='#team-section'>
+          Team
+        </MenuItem>
+        <MenuItem toggle={toggle} to='#work-section' isLast>
+          Work
+        </MenuItem>
+      </Stack>
+    </Box>
+  )
+}
+
+const NavBarContainer = ({ children, ...props }) => {
+  return (
+    <Flex
+      as='nav'
+      align='center'
+      wrap='wrap'
+      w='100%'
+      mb={8}
+      p={8}
+      bg={['primary.500', 'primary.500', 'transparent', 'transparent']}
+      color={['white', 'white', 'primary.700', 'primary.700']}
+      {...props}
+    >
+      <HmContainer>
+        <Flex
+          align='center'
+          justifyContent={{ base: 'flex-end', md: 'initial' }}
+          flexDirection={{ base: 'row-reverse', md: 'row' }}
+        >
+          {children}
+        </Flex>
+      </HmContainer>
+    </Flex>
   )
 }

@@ -36,7 +36,7 @@ const Footer = () => {
       placeItems='center'
       minH='446px'
       backgroundColor={theme.colors.brand.black}
-      p='2rem'
+      p='1rem'
       color='#fff'
     >
       <HmContainer>

@@ -1,12 +1,10 @@
 import React from 'react'
-
 import { Box, Heading, Text } from '@chakra-ui/react'
-
-import { InfoOutlineIcon } from '@chakra-ui/icons'
+import Image from 'next/image'
 
 import { theme } from '../styles/theme'
 
-const ServiceCard = ({ title, description }) => {
+const ServiceCard = ({ title, description, icon }) => {
   return (
     <>
       <Box
@@ -17,7 +15,7 @@ const ServiceCard = ({ title, description }) => {
         minHeight={'248px'}
         maxW={['unset', 'unset', '360px']}
       >
-        <InfoOutlineIcon mb='1rem' w={8} h={8} />
+        <Image alt='service icon' src={icon} />
         <Heading fontSize='lg'>{title}</Heading>
         <Text mt={4}>{description}</Text>
       </Box>

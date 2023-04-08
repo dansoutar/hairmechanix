@@ -52,7 +52,6 @@ const OurWork = () => {
           gap='1px'
         >
           {igImages}
-          hello
         </Box>
       </Box>
     </Box>

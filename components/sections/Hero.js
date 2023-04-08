@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { Box } from '@chakra-ui/react'
 
-import Navbar from '../Navbar'
+import { NavBar } from '../Navbar'
 import HmHalfContainer from '../HmHalfContainer'
 import heroImg from '../../public/hero-img.png'
 
@@ -14,7 +14,7 @@ import HeroContent from '../HeroContent'
 const Hero = () => {
   return (
     <Box as='section' className='hero-section' id='hero' display='flex' flexDirection={['column', 'column', 'row']}>
-      <Navbar className='nav' />
+      <NavBar className='nav' />
       <Box
         backgroundColor={theme.colors.brand.black}
         className='left'
