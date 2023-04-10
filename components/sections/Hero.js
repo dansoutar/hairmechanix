@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { Box } from '@chakra-ui/react'
 
-import { NavBar } from '../Navbar'
+import { NavBar } from '../NavbarLegacy'
 import HmHalfContainer from '../HmHalfContainer'
 import heroImg from '../../public/hero-img.png'
 
