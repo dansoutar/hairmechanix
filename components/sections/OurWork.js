@@ -1,38 +1,50 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 import Image from 'next/image'
 import { Box } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 
 import { HmContainer } from '../HmContainer'
-import { IG_URL } from '../../data/igUrl'
 
-const fetchIg = async () => {
+const INSTAGRAM_API_URL =
+  'https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token='
+
+const fetchInstagramImages = async (accessToken) => {
   try {
-    return await fetch(IG_URL).then((resp) => resp.json())
-  } catch (err) {
-    console.error(err)
+    const response = await axios.get(`${INSTAGRAM_API_URL}${accessToken}`)
+    return response.data
+  } catch (error) {
+    console.error('Error fetching Instagram data:', error)
+    return null
   }
 }
 
 const OurWork = () => {
-  const [igData, setIgData] = useState()
+  const [instagramData, setInstagramData] = useState([])
 
   useEffect(() => {
-    const getIgData = async () => {
-      const { data } = await fetchIg()
-      setIgData(data)
+    async function fetchData() {
+      const data = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
+      setInstagramData(data?.data)
     }
-    getIgData()
+
+    fetchData()
   }, [])
 
-  if (!igData) {
+  if (!instagramData) {
     return null
   }
 
-  const igImages = igData?.slice(0, 6).map((media) => {
-    return <Image src={media.media_url} alt='instagram post media' key={media.media_url} width='388px' height='388px' />
+  console.log(instagramData)
+
+  const instagramImages = instagramData?.slice(0, 6).map((media) => {
+    return (
+      <Box key={media.media_url} position='relative' width='100%' height='388px'>
+        <Image src={media.media_url} alt='instagram post media' layout='fill' objectFit='cover' />
+      </Box>
+    )
   })
 
   return (
@@ -44,15 +56,15 @@ const OurWork = () => {
               Our Work
             </Text>
           </Box>
+          <Box
+            display='grid'
+            gridTemplateColumns='repeat(auto-fit, minmax(min(288px, 100%), 1fr))'
+            overflowX='hidden'
+            gap='1px'
+          >
+            {instagramImages}
+          </Box>
         </HmContainer>
-        <Box
-          display='grid'
-          gridTemplateColumns='repeat(auto-fit, minmax(min(288px, 100%), 1fr))'
-          overflowX='hidden'
-          gap='1px'
-        >
-          {igImages}
-        </Box>
       </Box>
     </Box>
   )
