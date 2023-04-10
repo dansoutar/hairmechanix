@@ -9,60 +9,47 @@ import 'swiper/css'
 
 import { HmContainer } from '../HmContainer'
 import { TeamMemberCard } from '../TeamMemberCard'
-
 import { theme } from '../../styles/theme'
-import teamImg from '../../public/about-img.png'
 import slideLeftIcon from '../../public/slide-left.png'
 import slideRightIcon from '../../public/slide-right.png'
+import { teamImages } from '../../public/team'
 
 const teamMembers = [
   {
-    name: 'Lorem Ipsum1',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
+    name: 'Helene Briffa',
+    jobTitle: 'Owner, Stylist',
+    igLink: 'thehairmechanix',
+    image: teamImages.helene
   },
   {
-    name: 'Lorem Ipsum2',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
+    name: 'Sloane Rowe',
+    jobTitle: 'General Manager, Stylist',
+    igLink: 'sloanehairmechanix',
+    image: teamImages.sloane
   },
   {
-    name: 'Lorem Ipsum3',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
+    name: 'Cole Briffa',
+    jobTitle: 'Manager, Barber',
+    igLink: 'briffathebarber',
+    image: teamImages.cole
   },
   {
-    name: 'Lorem Ipsum4',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
+    name: 'Kaylin Ryall',
+    jobTitle: 'Stylist',
+    igLink: 'kaylinryall.hair',
+    image: teamImages.kaylin
   },
   {
-    name: 'Lorem Ipsum5',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
+    name: 'Paige Matthews',
+    jobTitle: 'Stylist',
+    igLink: 'paperhaircutz',
+    image: teamImages.paige
   },
   {
-    name: 'Lorem Ipsum6',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
-  },
-  {
-    name: 'Lorem Ipsum7',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
-  },
-  {
-    name: 'Lorem Ipsum8',
-    jobTitle: 'Lorem Ipsum Title',
-    igLink: 'https://www.instagram.com',
-    image: teamImg
+    name: 'Gabriella Hernandez',
+    jobTitle: 'Receptionist',
+    igLink: 'thehairmechanix',
+    image: teamImages.gab
   }
 ]
 

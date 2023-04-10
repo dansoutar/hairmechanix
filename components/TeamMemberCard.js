@@ -7,6 +7,8 @@ import Image from 'next/image'
 import { theme } from '../styles/theme'
 import igIcon from '../public/ig-icon.png'
 
+const INSTAGRAM_URL = 'https://www.instagram.com/'
+
 const TeamMemberCard = ({ name, jobTitle, igLink, image }) => {
   return (
     <>
@@ -28,7 +30,7 @@ const TeamMemberCard = ({ name, jobTitle, igLink, image }) => {
         <Text mt={4} color={theme.colors.brand.gold}>
           {jobTitle}
         </Text>
-        <Link href={igLink} isExternal>
+        <Link href={`${INSTAGRAM_URL}/${igLink}`} isExternal>
           <Image src={igIcon} alt='instagram icon' />
         </Link>
       </VStack>

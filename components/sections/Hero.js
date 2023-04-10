@@ -14,7 +14,7 @@ import HeroContent from '../HeroContent'
 const Hero = () => {
   return (
     <Box as='section' className='hero-section' id='hero' display='flex' flexDirection={['column', 'column', 'row']}>
-      <NavBar className='nav' />
+      <NavBar />
       <Box
         backgroundColor={theme.colors.brand.black}
         className='left'
