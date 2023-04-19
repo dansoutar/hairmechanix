@@ -34,9 +34,9 @@ const Footer = () => {
       as='section'
       display='grid'
       placeItems='center'
-      minH='446px'
+      minH={{ base: '360px', md: '446px' }}
       backgroundColor={theme.colors.brand.black}
-      p='1rem'
+      p='8%'
       color='#fff'
     >
       <HmContainer>
@@ -49,7 +49,13 @@ const Footer = () => {
             alignItems='center'
             gap='2rem'
           >
-            <Box className='footer-image' minW='180px' maxW='246px' maxH='246px' display='grid' placeItems='center'>
+            <Box
+              className='footer-image'
+              maxW={{ base: '100px', md: '180px', lg: '200px' }}
+              maxH='246px'
+              display='grid'
+              placeItems='center'
+            >
               <Image src={footerImg} alt='footer image' />
             </Box>
             <Box className='footer-info' display='grid' placeItems='center'>

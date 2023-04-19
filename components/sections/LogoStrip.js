@@ -4,19 +4,24 @@ import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import { HmContainer } from '../HmContainer'
-import logo from '../../public/hm-logo-1.png'
+import { logoStripImages } from '../../public/logo-strip-images'
 
-const Logo = () => <Image className='logostrip-logo' src={logo} alt='hair mechanix logo' style={{ opacity: 0.2 }} />
+const Logo = ({ src, maxWidth }) => (
+  <Box placeItems='center' maxWidth={maxWidth}>
+    <Image className='logostrip-logo' src={src} alt='partner logo' />
+  </Box>
+)
 
 const LogoStrip = () => {
   return (
     <Box as='section' className='our-team-section'>
       <Box p='6%'>
         <HmContainer>
-          <Box display='flex' flexWrap='wrap' justifyContent='center' overflowX='hidden' gap='6rem'>
-            {Array.from({ length: 5 }).map((_logo, idx) => (
-              <Logo key={idx} />
-            ))}
+          <Box display='flex' flexWrap='wrap' justifyContent={{ base: 'center', md: 'space-between' }} gap='1rem'>
+            <Logo maxWidth='215px' src={logoStripImages.schwarzkopf} />
+            <Logo maxWidth='215px' src={logoStripImages.colorProof} />
+            <Logo maxWidth='215px' src={logoStripImages.olaplex} />
+            <Logo maxWidth='215px' src={logoStripImages.layrite} />
           </Box>
         </HmContainer>
       </Box>

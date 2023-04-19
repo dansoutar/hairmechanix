@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import Image from 'next/image'
 import { Box } from '@chakra-ui/react'
-import { Text } from '@chakra-ui/react'
+import { Text, Link } from '@chakra-ui/react'
 
 import { HmContainer } from '../HmContainer'
 
@@ -37,12 +37,12 @@ const OurWork = () => {
     return null
   }
 
-  console.log(instagramData)
-
   const instagramImages = instagramData?.slice(0, 6).map((media) => {
     return (
       <Box key={media.media_url} position='relative' width='100%' height='388px'>
-        <Image src={media.media_url} alt='instagram post media' layout='fill' objectFit='cover' />
+        <Link href={media.permalink}>
+          <Image src={media.media_url} alt='instagram post media' layout='fill' objectFit='cover' />
+        </Link>
       </Box>
     )
   })
@@ -56,15 +56,16 @@ const OurWork = () => {
               Our Work
             </Text>
           </Box>
-          <Box
-            display='grid'
-            gridTemplateColumns='repeat(auto-fit, minmax(min(288px, 100%), 1fr))'
-            overflowX='hidden'
-            gap='1px'
-          >
-            {instagramImages}
-          </Box>
         </HmContainer>
+        <Box
+          display='grid'
+          gap='4px'
+          gridTemplateColumns='repeat(auto-fit, minmax(min(288px, 100%), 1fr))'
+          overflowX='hidden'
+          p='4px'
+        >
+          {instagramImages}
+        </Box>
       </Box>
     </Box>
   )

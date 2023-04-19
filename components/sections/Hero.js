@@ -6,7 +6,7 @@ import { Box } from '@chakra-ui/react'
 
 import { NavBar } from '../Navbar'
 import HmHalfContainer from '../HmHalfContainer'
-import heroImg from '../../public/hero-img.png'
+import scissorsImage from '../../public/scissors.jpg'
 
 import { theme } from '../../styles/theme'
 import HeroContent from '../HeroContent'
@@ -31,8 +31,15 @@ const Hero = () => {
         </HmHalfContainer>
       </Box>
       <Box className='right' flexBasis={['unset', 'unset', '50%']} h='100vh' maxH='1025px' position='relative'>
-        <Box className='image-parent' filter='auto' brightness='40%' h='100%'>
-          <Image className='chairImg' src={heroImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
+        <Box className='image-parent' filter='auto' brightness='80%' h='100%'>
+          <Image
+            className='chairImg'
+            src={scissorsImage}
+            alt='barber chair'
+            h='100%'
+            objectFit='cover'
+            layout='responsive'
+          />
         </Box>
 
         <Box position='absolute' inset='0' display={['grid', 'grid', 'none']} placeItems='center'>

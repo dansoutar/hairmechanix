@@ -8,7 +8,7 @@ import { Box, Text } from '@chakra-ui/react'
 
 import { CtaButton } from '../CtaButton'
 import HmHalfContainer from '../HmHalfContainer'
-import aboutImg from '../../public/about-img.png'
+import hmxSign from '../../public/hmx-sign.jpg'
 
 const About = () => (
   <Box
@@ -26,7 +26,7 @@ const About = () => (
       maxH={['unset', 'unset', '1025px']}
       position='relative'
     >
-      <Image className='shopImg' src={aboutImg} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
+      <Image className='shopImg' src={hmxSign} alt='barber chair' h='100%' objectFit='cover' layout='responsive' />
     </Box>
 
     <Box
@@ -39,7 +39,7 @@ const About = () => (
       position='relative'
     >
       <Box p='1rem' display={['block', 'block', 'none']}>
-        <Image className='shopImg-2' src={aboutImg} alt='barber chair' objectFit='cover' layout='responsive' />
+        <Image className='shopImg-2' src={hmxSign} alt='barber chair' objectFit='cover' layout='responsive' />
       </Box>
       <HmHalfContainer className='about-container' justifyContent='end' width='100%' maxW='520px' p='1rem'>
         <Box className='about-content' maxW='478px'>
