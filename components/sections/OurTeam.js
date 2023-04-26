@@ -36,8 +36,8 @@ const teamMembers = [
   {
     name: 'Kaylin Ryall',
     jobTitle: 'Stylist',
-    igLink: 'kaylinryall.hair',
-    image: teamImages.kaylin
+    igLink: 'clc_hair',
+    image: teamImages.carrie
   },
   {
     name: 'Paige Matthews',
