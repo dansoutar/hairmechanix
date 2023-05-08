@@ -1,2 +1,0 @@
-export const IG_URL =
-  'https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQVJVTEppWDBsU0I5eml0S1V3bWxDa1hJeUM2REZAqdDJzeGFfYnhLSWdlTWZAIM3pEbWFhOFdPM0ptMXhXMHEyV0tidTBNc3gxSHFNZAzBPb2VNRGRZARkJhdy15YTNkY1FacFl5MmhB'

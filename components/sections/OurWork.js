@@ -7,6 +7,7 @@ import { Box } from '@chakra-ui/react'
 import { Text, Link } from '@chakra-ui/react'
 
 import { HmContainer } from '../HmContainer'
+import { backupImages } from '../../public/our-work-backups'
 
 const INSTAGRAM_API_URL =
   'https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token='
@@ -26,8 +27,12 @@ const OurWork = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
-      setInstagramData(data?.data)
+      try {
+        const data = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
+        setInstagramData(data?.data)
+      } catch (error) {
+        console.log(error)
+      }
     }
 
     fetchData()
@@ -37,15 +42,29 @@ const OurWork = () => {
     return null
   }
 
-  const instagramImages = instagramData?.slice(0, 6).map((media) => {
-    return (
-      <Box key={media.media_url} position='relative' width='100%' height='388px'>
-        <Link href={media.permalink}>
-          <Image src={media.media_url} alt='instagram post media' layout='fill' objectFit='cover' />
-        </Link>
-      </Box>
-    )
-  })
+  const renderOurWorkImages = () => {
+    const isInstagramImages = instagramData.length > 0
+
+    if (!isInstagramImages) {
+      return backupImages.map((media) => {
+        return (
+          <Box key={media.src} position='relative' width='100%' height='388px'>
+            <Image src={media.src} alt='instagram post media' layout='fill' objectFit='cover' />
+          </Box>
+        )
+      })
+    }
+
+    return instagramData.slice(0, 6).map((media) => {
+      return (
+        <Box key={media.media_url} position='relative' width='100%' height='388px'>
+          <Link href={media.permalink}>
+            <Image src={media.media_url} alt='instagram post media' layout='fill' objectFit='cover' />
+          </Link>
+        </Box>
+      )
+    })
+  }
 
   return (
     <Box as='section' id='work-section'>
@@ -64,7 +83,7 @@ const OurWork = () => {
           overflowX='hidden'
           p='4px'
         >
-          {instagramImages}
+          {renderOurWorkImages()}
         </Box>
       </Box>
     </Box>
