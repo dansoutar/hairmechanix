@@ -7,7 +7,9 @@ import { Box } from '@chakra-ui/react'
 import { Text, Link } from '@chakra-ui/react'
 
 import { HmContainer } from '../HmContainer'
-import { backupImages } from '../../public/our-work-backups'
+// import { backupImages } from '../../public/our-work-backups'
+
+const HIDE_OUR_WORK_SECTION = true
 
 const INSTAGRAM_API_URL =
   'https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token='
@@ -27,33 +29,28 @@ const OurWork = () => {
 
   useEffect(() => {
     async function fetchData() {
-      try {
-        const data = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
-        setInstagramData(data?.data)
-      } catch (error) {
-        console.log(error)
-      }
+      const data = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
+      setInstagramData(data?.data)
     }
-
     fetchData()
   }, [])
 
-  if (!instagramData) {
+  if (!instagramData || HIDE_OUR_WORK_SECTION) {
     return null
   }
 
   const renderOurWorkImages = () => {
-    const isInstagramImages = instagramData.length > 0
+    // const isInstagramImages = instagramData.length > 0
 
-    if (!isInstagramImages) {
-      return backupImages.map((media) => {
-        return (
-          <Box key={media.src} position='relative' width='100%' height='388px'>
-            <Image src={media.src} alt='instagram post media' layout='fill' objectFit='cover' />
-          </Box>
-        )
-      })
-    }
+    // if (!isInstagramImages) {
+    //   return backupImages.map((media) => {
+    //     return (
+    //       <Box key={media.src} position='relative' width='100%' height='388px'>
+    //         <Image src={media.src} alt='instagram post media' layout='fill' objectFit='cover' />
+    //       </Box>
+    //     )
+    //   })
+    // }
 
     return instagramData.slice(0, 6).map((media) => {
       return (
