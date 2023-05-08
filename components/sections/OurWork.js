@@ -27,6 +27,8 @@ const fetchInstagramImages = async (accessToken) => {
 const OurWork = () => {
   const [instagramData, setInstagramData] = useState([])
 
+  console.log(process.env)
+
   useEffect(() => {
     async function fetchData() {
       const data = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
