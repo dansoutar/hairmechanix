@@ -47,7 +47,13 @@ const services = [
 
 const Services = () => {
   return (
-    <Box as='section' backgroundColor={theme.colors.brand.lightGrey} id='services-section' p={['4', '20']}>
+    <Box
+      as='section'
+      backgroundColor={theme.colors.brand.lightGrey}
+      id='services-section'
+      p={['4', '20']}
+      paddingY='12%'
+    >
       <HmContainer>
         <Text className='title' mb={8}>
           Services

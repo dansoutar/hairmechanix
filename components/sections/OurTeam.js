@@ -34,7 +34,7 @@ const teamMembers = [
     image: teamImages.cole
   },
   {
-    name: 'Kaylin Ryall',
+    name: 'Carrie Cudney',
     jobTitle: 'Stylist',
     igLink: 'clc_hair',
     image: teamImages.carrie
@@ -94,8 +94,8 @@ const OurTeam = () => {
   const attachSwiperRef = (swiper) => (swiperRef.current = swiper)
 
   return (
-    <Box as='section' id='team-section' slidesperview={3.5} backgroundColor={theme.colors.brand.black}>
-      <Box p={['4', '20']}>
+    <Box as='section' id='team-section' backgroundColor={theme.colors.brand.black}>
+      <Box paddingY='12%'>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>
             <Text color={theme.colors.brand.white} className='title' mb={8}>
@@ -106,16 +106,17 @@ const OurTeam = () => {
               <SlideNextButton />
             </ButtonGroup>
           </Box>
-          <Box display='flex' gap='1rem'>
-            <Swiper breakpoints={breakpoints} spaceBetween={25} slidesPerView={3.5} onSwiper={attachSwiperRef}>
-              {teamMembers.map(({ name, ...rest }) => (
-                <SwiperSlide key={name}>
-                  <TeamMemberCard key={name} {...{ name }} {...rest} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </Box>
         </HmContainer>
+
+        <Box marginLeft={'max(5%, calc((100vw - 1040px)/2))'}>
+          <Swiper breakpoints={breakpoints} spaceBetween={25} onSwiper={attachSwiperRef}>
+            {teamMembers.map(({ name, ...rest }) => (
+              <SwiperSlide key={name}>
+                <TeamMemberCard key={name} {...{ name }} {...rest} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
       </Box>
     </Box>
   )

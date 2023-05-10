@@ -20,7 +20,7 @@ const TeamMemberCard = ({ name, jobTitle, igLink, image }) => {
         shadow='md'
         borderWidth='1px'
         h='100%'
-        minW='320px'
+        minW='220px'
         minH='450px'
         maxW='400px'
         backgroundColor='#FFF'

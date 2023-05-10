@@ -6,11 +6,13 @@ import { theme } from '../styles/theme'
 import { HmContainer } from './HmContainer'
 import logo from '../public/hm-logo-1.png'
 
+import { HIDE_OUR_WORK_SECTION } from '../utils/vars'
+
 const Logo = (props) => {
   return (
     <Box {...props} maxWidth={{ base: '50px', md: '100px' }}>
       <Text fontSize='lg' fontWeight='bold'>
-        <Link>
+        <Link href='/'>
           <Image src={logo} alt='hair mechanix logo' />
         </Link>
       </Text>
@@ -100,9 +102,11 @@ const MenuLinks = ({ isOpen, toggle }) => {
         <MenuItem toggle={toggle} to='#team-section'>
           Team
         </MenuItem>
-        <MenuItem toggle={toggle} to='#work-section' isLast>
-          Work
-        </MenuItem>
+        {!HIDE_OUR_WORK_SECTION && (
+          <MenuItem toggle={toggle} to='#work-section' isLast>
+            Work
+          </MenuItem>
+        )}
       </Stack>
     </Box>
   )

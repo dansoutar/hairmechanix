@@ -1,15 +1,18 @@
 import React from 'react'
 
-import { Box, Stack, VStack } from '@chakra-ui/react'
+import { Box, Stack, VStack, Link } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { HmContainer } from './HmContainer'
 
 import { theme } from '../styles/theme'
 
+const PHONE_NUMBER = '(519) 974-5453'
+const PHONE_NUMBER_HREF = '15199745453'
+
 const infoColumns = [
   {
     title: 'Contact',
-    line1: '(519) 974-5453',
+    line1: PHONE_NUMBER,
     line2: 'info.hairmechanix@gmail.com'
   },
   {
@@ -38,16 +41,30 @@ const InfoBar = () => {
           gap='1.5rem'
           gridTemplateColumns={['1fr', '1fr', '1fr 1fr 1fr']}
         >
-          {infoColumns.map(({ title, line1, line2, line3 }) => (
-            <VStack key={title} color='#FFF' textAlign='center' spacing={2}>
-              <Text color={theme.colors.brand.black} fontWeight='bold'>
-                {title}
-              </Text>
-              <Text>{line1}</Text>
-              <Text>{line2}</Text>
-              <Text>{line3}</Text>
-            </VStack>
-          ))}
+          {infoColumns.map(({ title, line1, line2, line3 }) => {
+            if (title === 'Contact') {
+              return (
+                <VStack key={title} color='#FFF' textAlign='center' spacing={2}>
+                  <Text color={theme.colors.brand.black} fontWeight='bold'>
+                    {title}
+                  </Text>
+                  <Link href={`tel:${PHONE_NUMBER_HREF}`}>{line1}</Link>
+                  <Link href={`mailto:${line2}`}>{line2}</Link>
+                </VStack>
+              )
+            }
+
+            return (
+              <VStack key={title} color='#FFF' textAlign='center' spacing={2}>
+                <Text color={theme.colors.brand.black} fontWeight='bold'>
+                  {title}
+                </Text>
+                <Text>{line1}</Text>
+                <Text>{line2}</Text>
+                <Text>{line3}</Text>
+              </VStack>
+            )
+          })}
         </Stack>
       </HmContainer>
     </Box>

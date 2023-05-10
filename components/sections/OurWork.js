@@ -9,7 +9,7 @@ import { Text, Link } from '@chakra-ui/react'
 import { HmContainer } from '../HmContainer'
 // import { backupImages } from '../../public/our-work-backups'
 
-const HIDE_OUR_WORK_SECTION = true
+import { HIDE_OUR_WORK_SECTION } from '../../utils/vars'
 
 const INSTAGRAM_API_URL =
   'https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token='
@@ -64,7 +64,7 @@ const OurWork = () => {
   }
 
   return (
-    <Box as='section' id='work-section'>
+    <Box as='section' id='work-section' paddingY='12%'>
       <Box pt={16}>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>

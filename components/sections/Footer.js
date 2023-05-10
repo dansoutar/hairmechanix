@@ -7,6 +7,8 @@ import { HmContainer } from '../HmContainer'
 import { theme } from '../../styles/theme'
 import footerImg from '../../public/footer-img.png'
 
+import { HIDE_OUR_WORK_SECTION } from '../../utils/vars'
+
 const footerAddressInfo = (
   <>
     <Text className='title-small' color={theme.colors.brand.gold} fontWeight='bold' mb='10px'>
@@ -15,14 +17,18 @@ const footerAddressInfo = (
     <Box display='flex' gap='10px' flexDirection='column'>
       <Text>7826 Wyandotte St. E</Text>
       <Text>Windsor, ON</Text>
-      <Text>(519) 974-5453</Text>
-      <Text>info.hairmechanix@gmail.com</Text>
+      <Link href='tel:15199745453'>
+        <Text>(519) 974-5453</Text>
+      </Link>
+      <Link href='mailto:info.hairmechanix@gmail.com'>
+        <Text>info.hairmechanix@gmail.com</Text>
+      </Link>
     </Box>
   </>
 )
 
-const footerLinks = ['About', 'Services', 'Team', 'Work'].map((link) => (
-  <Link key={link} href='#'>
+const footerLinks = ['About', 'Services', 'Team', ...(!HIDE_OUR_WORK_SECTION ? ['Work'] : [])].map((link) => (
+  <Link key={link} href={`#${link.toLowerCase()}-section`}>
     {link}
   </Link>
 ))
@@ -37,6 +43,7 @@ const Footer = () => {
       minH={{ base: '360px', md: '446px' }}
       backgroundColor={theme.colors.brand.black}
       p='8%'
+      paddingY='12%'
       color='#fff'
     >
       <HmContainer>

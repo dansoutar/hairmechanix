@@ -42,7 +42,14 @@ const Hero = () => {
           />
         </Box>
 
-        <Box position='absolute' inset='0' display={['grid', 'grid', 'none']} placeItems='center'>
+        <Box
+          position='absolute'
+          inset='0'
+          display={['flex', 'flex', 'none']}
+          justifyContent='center'
+          alignItems='start'
+          paddingTop='30%'
+        >
           <HeroContent />
         </Box>
       </Box>
