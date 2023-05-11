@@ -34,6 +34,12 @@ const teamMembers = [
     image: teamImages.cole
   },
   {
+    name: 'Grace Powers',
+    jobTitle: 'Stylist, Brow Artist',
+    igLink: 'hairbygracepowers',
+    image: teamImages.grace
+  },
+  {
     name: 'Carrie Cudney',
     jobTitle: 'Stylist',
     igLink: 'clc_hair',
