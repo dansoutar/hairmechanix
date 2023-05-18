@@ -51,8 +51,8 @@ const Services = () => {
       as='section'
       backgroundColor={theme.colors.brand.lightGrey}
       id='services-section'
-      p={['4', '20']}
-      paddingY='12%'
+      p={['12', '20']}
+      px={{ base: 0 }}
     >
       <HmContainer>
         <Text className='title' mb={8}>

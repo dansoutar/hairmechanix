@@ -101,7 +101,7 @@ const OurTeam = () => {
 
   return (
     <Box as='section' id='team-section' backgroundColor={theme.colors.brand.black}>
-      <Box paddingY='12%'>
+      <Box py={['12', '20']}>
         <HmContainer>
           <Box display='flex' justifyContent='space-between'>
             <Text color={theme.colors.brand.white} className='title' mb={8}>

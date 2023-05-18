@@ -17,7 +17,6 @@ const About = () => (
     id='about-section'
     display='flex'
     flexDirection={['column', 'column', 'row']}
-    paddingY='12%'
   >
     <Box
       className='right'

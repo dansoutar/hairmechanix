@@ -23,8 +23,8 @@ const Logo = ({ src, link, maxWidth }) => (
 
 const LogoStrip = () => {
   return (
-    <Box as='section' className='our-team-section' paddingY={{ base: '12%', md: '0' }}>
-      <Box p='6%'>
+    <Box as='section' className='our-team-section' py={['12', '24']}>
+      <Box>
         <HmContainer>
           <Box display='flex' flexWrap='wrap' justifyContent={{ base: 'center', md: 'space-between' }} gap='1rem'>
             <Logo link={logoStripLinks.schwarzkopf} maxWidth='215px' src={logoStripImages.schwarzkopf} />
