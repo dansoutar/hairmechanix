@@ -28,6 +28,10 @@ const OurWork = () => {
   const [instagramData, setInstagramData] = useState([])
 
   useEffect(() => {
+    if (HIDE_OUR_WORK_SECTION) {
+      return
+    }
+
     async function fetchData() {
       const fetchedData = await fetchInstagramImages(process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN)
       setInstagramData(fetchedData?.data)
